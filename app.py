@@ -6,7 +6,7 @@ from PIL import Image
 # 加载模型
 @st.cache_resource
 def load_pipeline():
-    model_id = "runwayml/stable-diffusion-v1-5"
+    model_id = "CompVis/stable-diffusion-v1-4"
     pipe = StableDiffusionPipeline.from_pretrained(model_id)
     pipe = pipe.to("cuda")
     pipe.safety_checker = None
