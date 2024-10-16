@@ -7,7 +7,13 @@ from PIL import Image
 @st.cache_resource
 def load_pipeline():
     model_id = "CompVis/stable-diffusion-v1-4"
-    pipe = StableDiffusionPipeline.from_pretrained(model_id)
+    model_id = 'gsdf/Counterfeit-V2.5'
+    # model_id = 'Jovie/Midjourney'
+    # model_id = 'Kvikontent/midjourney-v6'
+    # token = 'flux-1-dev-non-commercial-license'  # 你的许可证
+
+    # model_id = 'XpucT/Deliberate' #需要meta license
+    pipe = StableDiffusionPipeline.from_pretrained(model_id) # , use_auth_token=token)
     pipe = pipe.to("cuda")
     pipe.safety_checker = None
     return pipe
