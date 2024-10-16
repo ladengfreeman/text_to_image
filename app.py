@@ -7,6 +7,7 @@ from PIL import Image
 @st.cache_resource
 def load_pipeline():
     model_id = "CompVis/stable-diffusion-v1-4"
+    model_id = 'gsdf/Counterfeit-V2.5'
     pipe = StableDiffusionPipeline.from_pretrained(model_id)
     pipe = pipe.to("cuda")
     pipe.safety_checker = None
